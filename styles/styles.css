@@ -1,7 +1,41 @@
-body{
-	 background: url('/assets/pictures/black.jpg') no-repeat  fixed; 
+.homePage{
+	 background: url('/assets/pictures/black.jpg') no-repeat ; 
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
 	  background-size: cover;
+	  margin:0;
+	  height:100%;
+}
+
+h1{
+	color:white;
+	font-size: 70px;
+	margin-left:40px;
+	font-family: Ecolier;
+	
+}
+
+@font-face {
+    font-family: Ecolier;
+    src: url('/assets/riesling.ttf');
+}
+
+.explore{
+	color:white;
+	font-family: Ecolier;
+	font-size: 40px;
+	position:absolute;
+	right: 7%;
+	bottom: 12%;
+}
+
+
+.container {
+	
+}
+
+body {
+	margin:0;
+	height:100%;
 }
