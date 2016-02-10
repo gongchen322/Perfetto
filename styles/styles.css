@@ -8,12 +8,22 @@
 	  height:100%;
 }
 
-h1{
-	color:white;
+.brand_name{
+	color:gold;
+	font-size: 60px;
+	margin-left:30px;
+	margin-top:40px;
+	font-family: Ecolier;
+	text-decoration: none;
+}
+.brand_name_home {
+	position:relative;
+	color:gold;
 	font-size: 70px;
 	margin-left:40px;
+	top:30px;
 	font-family: Ecolier;
-	
+	text-decoration: none;
 }
 
 @font-face {
@@ -22,7 +32,7 @@ h1{
 }
 
 .explore{
-	color:white;
+	color:gold;
 	font-family: Ecolier;
 	font-size: 40px;
 	position:absolute;
@@ -31,11 +41,104 @@ h1{
 }
 
 
-.container {
-	
-}
-
 body {
 	margin:0;
 	height:100%;
 }
+
+
+/*Header*/
+.contactHeader {
+  width: 100%;
+  background: none repeat  0 0 #171717;
+  height: 10%; 
+}
+ 
+.contactHeader .contactHeaderContainer {
+    font-size: 11px;
+    color: #d8d8d8;
+
+ }
+
+
+ .fa-home {
+ 	position:absolute;
+	display:inline;
+	right:5%;
+	top:3%;
+    margin-left: 10px;
+ }
+
+ .fa-phone {
+ 	position:absolute;
+	display:inline;
+	right:15%;
+	top:3%;
+    margin-left: 10px;
+ }
+
+/*Left Side Menu*/
+.bmenu {
+	padding: 10px;
+    padding-top: 10px;
+    margin: 0;
+    position: absolute;
+    background-color: #171717;
+	width:10%;
+	height:100%;
+}
+
+.bmenu li { 
+	font-size: 22px;
+    display: block;
+}
+.bmenu li a {
+	padding-top:20px;
+	list-style-type: none;
+	color: transparent;
+	display: block;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 5px #fff;
+	letter-spacing: 1px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.bmenu:hover li a {
+	text-shadow: 0px 0px 5px #fff;
+}
+.bmenu li a:hover {
+	color: #fff;
+	text-shadow: 0px 0px 5px gold;
+	padding-left: 0px;
+}
+
+
+.nested-view-container {
+	
+	width: 86%;
+	height:auto;
+	padding-left:14%;
+	top:6%;
+	bottom:0;
+	background-color: #3a3a3a;
+	font-color:white;
+	font-size: 40px;
+}
+
+.linebreak {
+	background-color: gold;
+	height: 3px;
+}
+
+.men_clothing {
+	display: inline;
+}
+
+.men_image {
+	margin-left:20px;
+	margin-top:5px;
+}
+
