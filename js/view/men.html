@@ -1,8 +1,10 @@
 <div >
 	<div  class="men_clothing" ng-repeat="item in items">
-    	<img class="men_image" ng-src="{{item.source}}" >
+    	<div data-content={{item.name}} class="image">
+    		<img class="men_image" ng-src="{{item.source}}" >
+    	</div>
     	<div class="men_info">
-    		<p>{{item.name}}</p>
+    		<p>{{item.color}}</p>
     		<p>{{item.price}}</p>
     	</div>
     	
