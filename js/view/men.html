@@ -1,5 +1,10 @@
-<div class="nested-view-container">
-	<div  class="men_clothing" ng-repeat="img in imgs">
-    	<img class="men_image" ng-src="{{img.source}}" >
+<div >
+	<div  class="men_clothing" ng-repeat="item in items">
+    	<img class="men_image" ng-src="{{item.source}}" >
+    	<div class="men_info">
+    		<p>{{item.name}}</p>
+    		<p>{{item.price}}</p>
+    	</div>
+    	
  	</div>
 </div>
