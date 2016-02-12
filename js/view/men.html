@@ -10,20 +10,30 @@
     	
  	</div>
 	<script type="text/ng-template" id="myModalContent.html">
-        <div class="popup_item">
+        <div class="popup_item" tabindex="-1">
 	        <div class="modal-header">
 	            <h3 class="modal-title"></h3>
 	        </div>
-	        <img class="men_image" ng-src="{{item.source}}" >
+	        <img class="large_image" ng-src="{{item.source_large}}" />
 	        <div class="modal-body">
-	            
-	            Selected: <b>aaa</b>
-	        </div>
-	        <div class="modal-footer">
-	            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+	            <p>{{item.name}}</p>
+		        <div class="dropdown">
+				  <button class="dropbtn">Choose Size</button>
+				  <div class="size">
+					  <div class="dropdown-content">
+					    <a class="size_item" ng-click="setSize('Small')">Small</a>
+					    <a class="size_item" ng-click="setSize('Median')">Median</a>
+					    <a class="size_item" ng-click="setSize('Large')">Large</a>
+					  </div>
+					  Size: {{size}}
+				  </div>
+				</div>
+	            <p>Color: {{item.color}}</p>
+	     		
+	            <button class="btn btn-primary" type="button" ng-click="ok()">Add To Order</button>
 	            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
 	        </div>
-	    </div>    
+	        </div>  
     </script>
  	
 
