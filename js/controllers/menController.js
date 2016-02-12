@@ -1,6 +1,6 @@
 (function() {
     
-    var menController = function ($scope) {
+    var menController = function ($scope,$uibModal, $log) {
         $scope.items = [
         {id:'1',source:'assets/pictures/clothing/men/1s.jpg',name:'Double wool cashmere coat', color:'Charles Black', price:'1150 USD'},
         {id:'2',source:'assets/pictures/clothing/men/2s.jpg',name:'Belted trenchcoat', color:'Minuto Balsam Green', price:'1250 USD'},
@@ -8,10 +8,58 @@
         {id:'4',source:'assets/pictures/clothing/men/4s.jpg',name:'Shiny bomber jacket', color:'Who Black Black', price:'340  USD'},
         {id:'5',source:'assets/pictures/clothing/men/5s.jpg',name:'Apolo double charcoal grey', color:'Apolo double charcoal grey', price:'750 USD'},
         ];
+        $scope.id=1;
+        $scope.animationsEnabled = true;
+
+        $scope.open = function (id) {
+        	console.log(id);
+	    var modalInstance = $uibModal.open({
+	      animation: $scope.animationsEnabled,
+	      templateUrl: 'myModalContent.html',
+	      controller: 'ModalInstanceCtrl',
+	      id: id,
+	      resolve: {
+	        items: function () {
+	          return $scope.items;
+	        },
+	        id: function () {
+	          return id-1;
+	        }
+	      }
+	    });
+	    modalInstance.result.then(function (selectedItem) {
+	      $scope.selected = selectedItem;
+	    }, function () {
+	      $log.info('Modal dismissed at: ' + new Date());
+	    });
+        };
+        $scope.toggleAnimation = function () {
+    		$scope.animationsEnabled = !$scope.animationsEnabled;
+  		};
+
     };
-    
+
+    var ModalInstanceCtrl = function ($scope, $uibModalInstance, items, id) {
+        $scope.items = items;
+        $scope.id = id;
+  		$scope.item=items[id];
+
+  		$scope.ok = function () {
+	    $uibModalInstance.close($scope.selected.item);
+	  };
+
+	  $scope.cancel = function () {
+	    $uibModalInstance.dismiss('cancel');
+	  };
+
+    };  
+
+  	menController.$inject = ['$scope', '$uibModal','$log'];
+    ModalInstanceCtrl.$inject = ['$scope', '$uibModalInstance', 'items','id'];
 
     angular.module('myApp')
       .controller('menController', menController);
+    angular.module('myApp')
+      .controller('ModalInstanceCtrl', ModalInstanceCtrl);
     
 }());

@@ -1,10 +1,9 @@
 //var jquery = require('jquery');
 //var angular = require('./js/lib/angular');
 
-var myApp = angular.module('myApp', ['ui.router']);
+var myApp = angular.module('myApp', ['ui.router','ngAnimate', 'ui.bootstrap']);
 //var menController = require('./js/controllers/menController.js');
 myApp.config(function($stateProvider, $urlRouterProvider) {
-    
     $urlRouterProvider.otherwise('/home');
     
     $stateProvider

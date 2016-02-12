@@ -191,3 +191,36 @@ ul {
 	font-family: 'Helvetica'
 }
 
+/*Popup when click on a image*/
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+.modal-body {
+  position: relative;
+  padding: 15px;
+}
+.modal-footer {
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+  position:absolute;
+  bottom:10%;
+  left:50%;
+}
+
+.popup_item {
+	position:absolute;
+	background-color: white;
+    width:800px;
+    height:1000px;
+    top: 10%;
+    left: 50%;
+    margin-left: -400px; 
+    margin-top: -40px; 
+    z-index: 1;
+}

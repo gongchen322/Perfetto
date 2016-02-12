@@ -1,31 +1,33 @@
-<div class="shop">
+<div class="container">
+	<div class="shop">
 
-	<!-- Header -->
-        <div class ='bigheader' >
-	        <div class ='contactHeader'>
-	          <div class='contactHeaderContainer'>
-	          	<a ui-sref="home" class="brand_name">Perfetto</a>
-	            <a class='fa-home'> </span>
-	            <ul class="top-menu">
-	                <li><a href="#">My Account</a></li>
-	                <li><a href="#">My Treasures</a></li>
-	            </ul>
-	          </div>
+		<!-- Header -->
+	        <div class ='bigheader' >
+		        <div class ='contactHeader'>
+		          <div class='contactHeaderContainer'>
+		          	<a ui-sref="home" class="brand_name">Perfetto</a>
+		            <a class='fa-home'> </span>
+		            <ul class="top-menu">
+		                <li><a href="#">My Account</a></li>
+		                <li><a href="#">My Treasures</a></li>
+		            </ul>
+		          </div>
+		        </div>
 	        </div>
-        </div>
 
-	<!-- Left Navigation bar -->
-		<div class="linebreak"></div>
-            <div class="bmenu">
-            <ul >
-                <li><a ui-sref=".men">Men</a></li>
-                <li><a ui-sref=".women">Women</a></li>
-                <li><a ui-sref=".sale">Sale</a></li>
-                <li><a ui-sref=".collections">Collection</a></li>
-                <li><a ui-sref=".stores">Stores</a></li>      
-            </ul>
-			</div>
-             <!-- UI Router Nested View which displays the content from the left navigation bar -->	
-		<div class="nested-view-container" ui-view></div>
-			
+		<!-- Left Navigation bar -->
+			<div class="linebreak"></div>
+	            <div class="bmenu">
+	            <ul >
+	                <li><a ui-sref=".men">Men</a></li>
+	                <li><a ui-sref=".women">Women</a></li>
+	                <li><a ui-sref=".sale">Sale</a></li>
+	                <li><a ui-sref=".collections">Collection</a></li>
+	                <li><a ui-sref=".stores">Stores</a></li>      
+	            </ul>
+				</div>
+	             <!-- UI Router Nested View which displays the content from the left navigation bar -->	
+			<div class="nested-view-container" ui-view></div>
+				
+	</div>
 </div>
