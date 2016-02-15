@@ -2,19 +2,26 @@
 //var angular = require('./js/lib/angular');
 
 var myApp = angular.module('myApp', ['ui.router','ngAnimate', 'ui.bootstrap']);
+
 //var menController = require('./js/controllers/menController.js');
 myApp.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
     
     $stateProvider
         
-        // HOME STATES AND NESTED VIEWS ========================================
+        // HOME STATES 
         .state('home', {
             url: '/home',
             templateUrl: 'js/view/partial-home.html'
         })
         
-        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
+        // CART PAGE
+        .state('cart', {
+            url: '/cart',
+            templateUrl: 'js/view/cart.html',
+            controller: 'cartController'
+        })
+        // SHOP PAGE AND NESTED VIEWS  =================================
         .state('shop', {
           	url: '/shop/men',
             templateUrl: 'js/view/shop.html'
@@ -24,7 +31,6 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         url: '/',
         templateUrl: 'js/view/men.html',
         controller: 'menController'
-
     	})
 
          .state('shop.women', {
@@ -57,5 +63,25 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 
         
 });
+
+
+myApp.factory("DataService", function() {
+  var myStore = new store();
+  var myCart = new cart("AngularStore");
+  myCart.addCheckoutParameters("PayPal", "your PayPal merchant account id");
+  myCart.addCheckoutParameters("Google", "your Google merchant account id ", {
+    ship_method_name_1: "UPS Next Day Air",
+    ship_method_price_1: "20.00",
+    ship_method_currency_1: "USD",
+    ship_method_name_2: "UPS Ground",
+    ship_method_price_2: "15.00",
+    ship_method_currency_2: "USD"
+  });
+  return {
+    store: myStore,
+    cart: myCart
+  };
+});
+
 
 //myApp.controller('mainCtrl', require('./js/controllers/mainCtrl'));

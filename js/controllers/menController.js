@@ -40,9 +40,7 @@
 	      $log.info('Modal dismissed at: ' + new Date());
 	    });
         };
-        $scope.toggleAnimation = function () {
-    		$scope.animationsEnabled = !$scope.animationsEnabled;
-  		};
+        
 
   		$scope.setSize = function (size) {
     			$scope.size=size;
@@ -65,6 +63,9 @@
 	  $scope.setSize = function (size) {
     			$scope.size=size;
   		};
+    $scope.$on('$routeChangeStart', function(){
+        $modalInstance.close();
+    });
     };  
 
   	menController.$inject = ['$scope', '$uibModal','$log'];
@@ -74,5 +75,6 @@
       .controller('menController', menController);
     angular.module('myApp')
       .controller('ModalInstanceCtrl', ModalInstanceCtrl);
+    
     
 }());
