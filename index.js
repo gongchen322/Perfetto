@@ -65,23 +65,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 });
 
 
-myApp.factory("DataService", function() {
-  var myStore = new store();
-  var myCart = new cart("AngularStore");
-  myCart.addCheckoutParameters("PayPal", "your PayPal merchant account id");
-  myCart.addCheckoutParameters("Google", "your Google merchant account id ", {
-    ship_method_name_1: "UPS Next Day Air",
-    ship_method_price_1: "20.00",
-    ship_method_currency_1: "USD",
-    ship_method_name_2: "UPS Ground",
-    ship_method_price_2: "15.00",
-    ship_method_currency_2: "USD"
-  });
-  return {
-    store: myStore,
-    cart: myCart
-  };
-});
+
 
 
 //myApp.controller('mainCtrl', require('./js/controllers/mainCtrl'));

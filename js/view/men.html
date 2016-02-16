@@ -1,7 +1,7 @@
 <div >
 	<div  class="men_clothing" ng-repeat="item in items">
     	<div data-content={{item.name}} class="image" ng-click="open(item.id)">
-    		<img class="men_image" ng-src="{{item.source}}" >
+    		<img class="men_image" ng-src="{{item.main_image}}" >
     	</div>
     	<div class="men_info">
     		<p>{{item.color}}</p>
@@ -14,7 +14,7 @@
 	        <div class="modal-header">
 	            <h3 class="modal-title"></h3>
 	        </div>
-	        <img class="large_image" ng-src="{{item.source_large}}" />
+	        <img class="large_image" ng-src="{{item.images}}" />
 	        <div class="modal-body">
 	            <strong>{{item.name}}</strong>
 	            <br />
