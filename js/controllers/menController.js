@@ -20,21 +20,18 @@
         $scope.animationsEnabled = true;
 
         $scope.open = function (id) {
-        	console.log(id);
-	    var modalInstance = $uibModal.open({
-	      animation: $scope.animationsEnabled,
-	      templateUrl: 'myModalContent.html',
-	      controller: 'ModalInstanceCtrl',
-	      id: id,
-	      resolve: {
-	        items: function () {
-	          return $scope.items;
-	        },
-	        id: function () {
-	          return id-1;
+
+	      var modalInstance = $uibModal.open({
+  	      animation: $scope.animationsEnabled,
+  	      templateUrl: 'myModalContent.html',
+  	      controller: 'ModalInstanceCtrl',
+  	      id: id,
+  	      resolve: {
+  	        item: function () {
+  	          return dataService.store.getProduct(id);
+  	        }
 	        }
-	      }
-	    });
+	      });
 	    modalInstance.result.then(function (selectedItem) {
 	      $scope.selected = selectedItem;
 	    }, function () {
@@ -49,28 +46,33 @@
 
     };
 
-    var ModalInstanceCtrl = function ($scope, $uibModalInstance, items, id) {
-        $scope.items = items;
-        $scope.id = id;
-  		$scope.item=items[id];
-  		$scope.size='Small';
-  		$scope.ok = function () {
-	    $uibModalInstance.close($scope.selected.item);
-	  };
+    var ModalInstanceCtrl = function ($scope, $uibModalInstance, item, dataService) {
 
-	  $scope.cancel = function () {
-	    $uibModalInstance.dismiss('cancel');
-	  };
-	  $scope.setSize = function (size) {
-    			$scope.size=size;
-  		};
-    $scope.$on('$routeChangeStart', function(){
-        $modalInstance.close();
-    });
-    };  
+  		$scope.item=item;
+  		$scope.size='Choose your size';
+  		
+      $scope.addToOrder= function () {
+        dataService.cart.addItem(item.id, item.name, item.color,$scope.size, item.price, $('#quantity').val(), item.main_image, item.images);
+        $uibModalInstance.dismiss('cancel');
+        console.log("item added"+item.name + "quantity is "+$('#quantity').val());
+      };
+
+  	  $scope.cancel = function () {
+  	    $uibModalInstance.dismiss('cancel');
+  	  };
+
+  	  $scope.setSize = function (size) {
+      			$scope.size=size;
+    		};
+
+      //When changing the route, the modalInstance will disappear. Otherwise, it may cause a bug
+      $scope.$on('$routeChangeStart', function(){
+          $modalInstance.close();
+      });
+      };  
 
   	menController.$inject = ['$scope', '$uibModal','$log','dataService'];
-    ModalInstanceCtrl.$inject = ['$scope', '$uibModalInstance', 'items','id'];
+    ModalInstanceCtrl.$inject = ['$scope', '$uibModalInstance', 'item','dataService'];
 
     angular.module('myApp')
       .controller('menController', menController);

@@ -14,24 +14,29 @@
 	        <div class="modal-header">
 	            <h3 class="modal-title"></h3>
 	        </div>
-	        <img class="large_image" ng-src="{{item.images}}" />
+	        <img class="large_image" ng-src="{{item.images[0]}}" />
 	        <div class="modal-body">
 	            <strong>{{item.name}}</strong>
 	            <br />
+	            Size: 
 		        <div class="dropdown">
-				  <button class="dropbtn">Choose Size</button>
+				  <button class="dropbtn">{{size}}</button>
 				  <div class="size">
 					  <div class="dropdown-content">
 					    <a class="size_item" ng-click="setSize('Small')">Small</a>
 					    <a class="size_item" ng-click="setSize('Median')">Median</a>
 					    <a class="size_item" ng-click="setSize('Large')">Large</a>
 					  </div>
-					  Size: {{size}}
+					  
 				  </div>
 				</div>
+				<br />
+				<br />
+				Quantity: 
+		        <input id="quantity" type="number" name="quantity" min="1" max="10"/>
 	            <p>Color: {{item.color}}</p>
 	     		
-	            <button class="btn btn-primary" type="button" ng-click="ok()">Add To Order</button>
+	            <button class="btn btn-primary" type="button" ng-click="addToOrder()">Add To Order</button>
 	            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
 	        </div>
 	        </div>  

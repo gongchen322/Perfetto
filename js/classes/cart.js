@@ -51,8 +51,9 @@ cart.prototype.saveItems = function () {
 
 */
 
+
 // adds an item to the cart
-cart.prototype.addItem = function (id, name, price, quantity) {
+cart.prototype.addItem = function (id, name, color,size, price, quantity, main_image, images) {
     quantity = this.toNumber(quantity);
     if (quantity != 0) {
 
@@ -71,12 +72,12 @@ cart.prototype.addItem = function (id, name, price, quantity) {
 
         // new item, add now
         if (!found) {
-            var item = new cartItem(id, name, price, quantity);
+            var item = new cartItem(id, name, color, size, price, quantity, main_image, images);
             this.items.push(item);
         }
 
         // save changes
-        this.saveItems();
+        //this.saveItems();
     }
 }
 
@@ -120,10 +121,11 @@ cart.prototype.toNumber = function (value) {
 //----------------------------------------------------------------
 // items in the cart
 //
-function cartItem(id, name, color, price, quantity, main_image, images) {
+function cartItem(id, name, color, size, price, quantity, main_image, images) {
     this.id = id;
     this.name = name;
     this.color = color;
+    this.size = size;
     this.price = price;
     this.quantity = quantity;
     this.main_image = main_image;
