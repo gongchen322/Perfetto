@@ -1,0 +1,50 @@
+<div class="loginContainer">
+	<div class ='bigheader2' >
+		        <div class ='contactHeader'>
+		          <div class='contactHeaderContainer'>
+		          	<a ui-sref="shop.men" class="brand_name">Perfetto</a>
+		            <a class='fa-home'> </span>
+		            <ul class="top-menu">
+		                <li><a ui-sref="account_login">My Account</a></li>
+		                <li><a ui-sref="cart">My Treasures</a></li>
+		            </ul>
+		          </div>
+		        </div>
+	        </div>
+    <div class="loginbody">
+    <h1>Login or Create an account</h1>
+	<h2>Registered Customer</h2>
+	<div class="loginInput">
+		
+		<br />
+		<input type="text" placeholder="Email(User Name)" required="" id="email1" />
+		<br />
+		<input type="password" placeholder="Password" required="" id="password1" />
+		<br />
+		<button ng-click="login()">Login</button>
+	</div>
+	<hr />
+	<br>
+
+	 <div class="loginbody">
+	<h2>Register here</h2>
+	<div class="loginInput">
+		<br />
+		<input type="text" placeholder="Your name" required="" ng-model="name"  />
+		<br />
+		<input type="text" placeholder="Username" required="" ng-model="email2" />
+		<br />
+		<input type="password" placeholder="Password" required="" ng-model="password2" />
+		<br />
+		<br />
+		<input type="text" placeholder="Shipping Address" required="" ng-model="shippingAddress" />
+		<br />
+		<input type="text" placeholder="Billing Address" required="" ng-model="billingAddress" />
+		<br />
+		<form ng-submit="signup(name, shippingAddress,billingAddress, email2, password2)">
+   		 <button type="submit">Sign Up</button>
+		</form>
+		
+	</div>	
+	</div>
+</div>

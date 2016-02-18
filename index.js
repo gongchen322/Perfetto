@@ -21,6 +21,11 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'js/view/cart.html',
             controller: 'cartController'
         })
+        .state('account_login', {
+            url: '/account_login',
+            templateUrl: 'js/view/account_login.html',
+            controller: 'loginController'
+        })       
         // SHOP PAGE AND NESTED VIEWS  =================================
         .state('shop', {
           	url: '/shop/men',

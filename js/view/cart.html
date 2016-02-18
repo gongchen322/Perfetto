@@ -70,6 +70,11 @@
       <td />
     </tr>
   </table>
+  <button 
+            class="checkoutBtn" type="button" 
+            ng-disabled="item.quantity <=0"
+            ng-click="cart.addItem(item.id, item.name, item.color,item.size, item.price, +1, item.main_image, item.images)">+
+          </button>
   </div>
 
 </div>
