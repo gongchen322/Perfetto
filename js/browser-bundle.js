@@ -71,11 +71,17 @@
 	            url: '/account_login',
 	            templateUrl: 'js/view/account_login.html',
 	            controller: 'loginController'
+	        })
+	        .state('profile', {
+	            url: '/profile',
+	            templateUrl: 'js/view/profile.html',
+	            controller: 'profileController'
 	        })       
 	        // SHOP PAGE AND NESTED VIEWS  =================================
 	        .state('shop', {
 	          	url: '/shop/men',
-	            templateUrl: 'js/view/shop.html'
+	            templateUrl: 'js/view/shop.html',
+	            controller: 'shopController'
 	        })
 
 	        .state('shop.men', {

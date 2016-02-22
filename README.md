@@ -1,3 +1,4 @@
 how to use:
 
-webpack-dev-server --progress --colors
+npm install
+npm start
