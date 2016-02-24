@@ -1,6 +1,6 @@
 (function() {
     
-    var loginController = function ($scope,$location, $http, dataService) {
+    var loginController = function ($scope,$location, $http, dataService, Authorization) {
 
       $scope.name = "";
       $scope.shippingAddress = "";
@@ -9,7 +9,6 @@
       $scope.password2 = "";
 
       //Sign Up function
-
       $scope.signup= function () {
           var body={      
                 name: $scope.name,
@@ -19,10 +18,8 @@
                 password:$scope.password2        
         };
          $http.post("/users", JSON.stringify(body)).success(function(data, status) {
-            console.log("success signup");
-            //$location.path('/profile');
+            console.log("Successful signup");         
         })
-          console.log(JSON.stringify(body));
       };
 
       //Login Function
@@ -32,19 +29,18 @@
                 password:$scope.password1        
         };
          $http.post("/users/login", JSON.stringify(body)).success(function(data, status, headers) {
-            console.log("success login");
-            dataService.isLoggedIn = true;
-            console.log(dataService.isLoggedIn);
-            console.log("header:"+headers('Auth'));
-            //$location.path('/profile');
-        })
-          console.log(JSON.stringify(body));
+            console.log("Successful login");
+            Authorization.go('profile.userInfo');
+    
+            localStorage.setItem('yourTokenKey', headers('Auth'));
+            data=JSON.stringify(data);
+            localStorage.setItem('userInfo',data);
+            Authorization.userInfo = data;
+        })   
       };
-
-
     };
 
-    loginController.$inject = ['$scope','$location','$http','dataService'];
+    loginController.$inject = ['$scope','$location','$http','dataService','Authorization'];
 
     angular.module('myApp')
       .controller('loginController', loginController);

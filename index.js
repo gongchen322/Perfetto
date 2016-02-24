@@ -4,7 +4,9 @@
 var myApp = angular.module('myApp', ['ui.router','ngAnimate', 'ui.bootstrap']);
 
 //var menController = require('./js/controllers/menController.js');
-myApp.config(function($stateProvider, $urlRouterProvider) {
+myApp
+.constant('_', window._)
+.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
     
     $stateProvider
@@ -29,7 +31,17 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         .state('profile', {
             url: '/profile',
             templateUrl: 'js/view/profile.html',
-            controller: 'profileController'
+            controller: 'profileController',
+            data: {
+                authorization: true,
+                redirectTo: 'account_login',
+                
+            }
+        })
+        .state('profile.userInfo', {
+        url: '/',
+        templateUrl: 'js/view/userInfo.html',
+        controller: 'userInfoController'
         })       
         // SHOP PAGE AND NESTED VIEWS  =================================
         .state('shop', {
@@ -73,7 +85,62 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     	}});
 
         
+})
+.run(function(_,$rootScope, $state, Authorization) {
+  $rootScope._ = window._;
+  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+    if (!Authorization.authorized) {
+      if (Authorization.memorizedState && (!_.has(fromState, 'data.redirectTo') || toState.name !== fromState.data.redirectTo)) {
+        Authorization.clear();
+      }
+      if (_.has(toState, 'data.authorization') && _.has(toState, 'data.redirectTo')) {
+        if (_.has(toState, 'data.memory')) {
+          Authorization.memorizedState = toState.name;
+        }
+        $state.go(toState.data.redirectTo);
+      }
+    }
+
+  });
+
+  $rootScope.onLogout = function() {
+    Authorization.clear();
+    $state.go('home');
+  };
+})
+.service('Authorization', function($state) {
+  
+  console.log("this is your token"+localStorage.getItem('yourTokenKey'));
+  this.authorized = (localStorage.getItem('yourTokenKey')==null)?false:true;
+  this.memorizedState = null;
+  this.userInfo = (localStorage.getItem('userInfo')== null)?{}:JSON.parse(localStorage.getItem('userInfo'));
+  var
+  clear = function() {
+    console.log("logged out");
+    this.authorized = false;
+    this.memorizedState = null;
+    this.userInfo = {};
+    localStorage.removeItem('yourTokenKey');
+    localStorage.removeItem('userInfo');
+    $state.go('cart');
+  },
+
+  go = function(fallback) {
+    this.authorized = true;
+    var targetState = this.memorizedState ? this.memorizedState : fallback;
+    $state.go(targetState);
+  };
+
+  return {
+    authorized: this.authorized,
+    memorizedState: this.memorizedState,
+    userInfo:this.userInfo,
+    clear: clear,
+    go: go
+  };
 });
+
+
 
 
 

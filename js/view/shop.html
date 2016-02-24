@@ -6,9 +6,11 @@
 		        <div class ='contactHeader'>
 		          <div class='contactHeaderContainer'>
 		          	<a ui-sref="shop.men" class="brand_name">Perfetto</a>
-		            <a class='fa-home'> </span>
+		            
 		            <ul class="top-menu">
-		                <li><a ui-sref="{{location}}">My Account</a></li>
+		            	<li ><a ng-hide="isLoggedIn">Hello,{{name}}</a></li>
+		            	<li ng-click="logout()"><a ng-hide="isLoggedIn" >Logout?</a></li>
+		                <li><a  ui-sref="{{location}}">My Account</a> </li>
 		                <li><a ui-sref="cart">My Treasures</a></li>
 		            </ul>
 		          </div>

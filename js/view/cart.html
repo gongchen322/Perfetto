@@ -1,16 +1,17 @@
 <div class ="cartContainer">
-<div class ='bigheader2' >
-            <div class ='contactHeader'>
-              <div class='contactHeaderContainer'>
+  <div class ='bigheader2' >
+        <div class ='contactHeader'>
+            <div class='contactHeaderContainer'>
                 <a ui-sref="shop.men" class="brand_name">Perfetto</a>
                 <a class='fa-home'> </span>
                 <ul class="top-menu">
                     <li><a href="#">My Account</a></li>
                     <li><a ui-sref="cart">My Treasures</a></li>
                 </ul>
-              </div>
             </div>
-          </div>
+        </div>
+     </div>
+
 <div class="cartBoard">
   <div class="cart">
   <table class="cartTable">
@@ -70,11 +71,7 @@
       <td />
     </tr>
   </table>
-  <button 
-            class="checkoutBtn" type="button" 
-            ng-disabled="item.quantity <=0"
-            ng-click="cart.addItem(item.id, item.name, item.color,item.size, item.price, +1, item.main_image, item.images)">+
-          </button>
+  <button class="checkoutBtn" type="button" ng-disabled="item.quantity <=0">Check Out</button>
   </div>
 
 </div>

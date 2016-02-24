@@ -313,6 +313,7 @@ ul {
 	height:60%;
 	margin-left:auto;
 	margin-right: auto;
+
 	
 }
 .cart {
@@ -320,7 +321,7 @@ ul {
 	margin-left:auto;
 	margin-right:auto;
 	height:100%;
-	
+	border:solid 1px red;
 }
 .cartTable {
 	width:70%;
@@ -335,7 +336,10 @@ ul {
 	width: 109px;
 	margin-left:auto;
 	margin-right:auto;
-
+}
+.checkoutBtn {
+	position:relative;
+	float:right;
 }
 
 .bigheader2 {
@@ -365,3 +369,40 @@ ul {
 	width:100px;
 	height:30px;
 }
+
+
+/*Profile Page*/
+
+.profileContainer {
+
+	width:max-width;
+	height:100%;
+}
+
+.profileBody {
+
+}
+.nested-view-container2 {
+	width: 90%;
+	height:100%;
+	margin-left:10%;
+	background-color: white;	
+}
+
+.userInfo {
+	text-align:center;
+}
+
+.userInfo input{
+	font-size:15px;
+	text-align:center;
+	width:300px;
+	height:40px;
+}
+
+
+
+
+
+
+

@@ -1,16 +1,10 @@
 (function () {
 	var dataService = function () {
 		var myStore = new store();
-        var myCart = new cart("AngularStore");
-  		
-        var LOCAL_TOKEN_KEY = 'yourTokenKey';
-
-        var isLoggedIn = false;
-
+    var myCart = new cart("AngularStore");
         return {
             store: myStore,
-            cart: myCart,
-            isLoggedIn:isLoggedIn
+            cart: myCart
           };
     	};
 
