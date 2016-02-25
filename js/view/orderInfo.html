@@ -1,0 +1,26 @@
+<div class="orderInfo">
+			<br />
+		<br />
+	 <p>Your past order information</p>
+	 <table align="center">
+	 <tr class="cartHeader">
+      <th class="th1"><b>Customer Name</b></th>
+      <th class="th2"><b>Shipping Address</b></th>
+      <th class="th3"><b>Billing Address</b></th>
+      <th class="th4"><b>Quantity</b></th>
+      <th class="th5"><b>Price</b></th>
+      <th class="th6"><b>Date</b></th>
+      
+    </tr>
+
+	<tr ng-repeat="order in orders">
+      <td class="cart1" >{{order.Customer_name}}</td>
+      <td class="cart2" >{{order.shipping_address}}</td>
+      <td class="cart3" >{{order.billing_address}}</td>
+      <td class="cart4" >{{order.totalItems}}</td>
+      <td class="cart5" >{{order.totalPrice}}</td>
+      <td class="cart6" >{{order.Date}}</td>
+    </tr>
+	</table>
+
+</div>

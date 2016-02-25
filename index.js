@@ -47,7 +47,12 @@ myApp
         url: '/',
         templateUrl: 'js/view/userInfo.html',
         controller: 'userInfoController'
-        })       
+        })
+        .state('profile.orders', {
+        url: '/profile/orders',
+        templateUrl: 'js/view/orderInfo.html',
+        controller: 'orderInfoController'
+        })        
         // SHOP PAGE AND NESTED VIEWS  =================================
         .state('shop', {
           	url: '/shop/men',

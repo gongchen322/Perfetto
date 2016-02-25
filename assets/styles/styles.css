@@ -404,8 +404,16 @@ ul {
 	text-align: center;
 }
 
+.orderInfo {
+	text-align: center;
+}
 
-
+.orderInfo table {
+	border-collapse: collapse;
+}
+.orderInfo table, th, td{
+	border:solid 1px black;
+}
 
 
 
