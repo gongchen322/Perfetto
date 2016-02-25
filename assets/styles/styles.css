@@ -69,11 +69,13 @@ body {
  	position:relative;
  	list-style-type: none;
 	padding:0px;
-    width:40%;
+    width:50%;
     font-size:30px;
     color:gold;
     float:right;
     margin-bottom:20px;
+    text-align: right;
+    margin-right:40px;
  }
 
 .top-menu li{
