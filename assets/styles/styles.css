@@ -408,10 +408,10 @@ ul {
 	text-align: center;
 }
 
-.orderInfo table {
+.orderInfo >table {
 	border-collapse: collapse;
 }
-.orderInfo table, th, td{
+.orderInfo tr td{
 	border:solid 1px black;
 }
 
