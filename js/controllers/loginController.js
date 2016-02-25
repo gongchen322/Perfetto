@@ -1,7 +1,7 @@
 (function() {
     
     var loginController = function ($scope,$location, $http, dataService, Authorization) {
-
+      $scope.location = (Authorization.authorized)? 'profile.userInfo':'account_login';
       $scope.name = "";
       $scope.shippingAddress = "";
       $scope.billingAddress = "";
@@ -19,7 +19,9 @@
         };
          $http.post("/users", JSON.stringify(body)).success(function(data, status) {
             console.log("Successful signup");         
-        })
+        }).error(function(data, status) {
+            console.error('Repos error', status, data);
+          })
       };
 
       //Login Function

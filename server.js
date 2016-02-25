@@ -16,30 +16,18 @@ var todoNextId = 1;
 app.use(bodyParser.json());
 app.use('/js',express.static(path.join(__dirname, '/js')));
 app.use('/assets', express.static(path.join(__dirname, '/assets')));
-app.get('*', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
 //Get /todos? Completed=true
-app.get('/todos', middleware.requireAuthentication, function (req,res) {
-	var query = req.query;
+app.get('/orders', middleware.requireAuthentication, function (req,res) {
 	var where = {
 		userId: req.user.get('id')
 	};
 
-	if(query.hasOwnProperty('completed') && query.completed === 'true') {
-		where.completed = true;
-	} else if (query.hasOwnProperty('completed') && query.completed === 'false') {
-		where.completed = false;
-	}
 
-	if (query.hasOwnProperty('q') && query.q.length > 0 ) {
-		where.description = {
-			$like: '%' + query.q + '%'
-		};
-	}
-
-	db.todo.findAll({where : where}).then (function (todos) {
-		res.json(todos);
+	db.order.findAll({where : where}).then (function (orders) {
+		res.json(orders);
 	}, function (e) {
 		res.status(500).send();
 	})
@@ -69,16 +57,16 @@ app.get('/todos/:id', middleware.requireAuthentication,function (req,res) {
 
 });
 
-//POST /todos
+//POST /orders
 
-app.post('/todos', middleware.requireAuthentication, function (req,res) {
-	var body = _.pick(req.body, 'description', 'completed');
+app.post('/orders', middleware.requireAuthentication, function (req,res) {
+	var body = _.pick(req.body, 'Customer_name', 'Customer_email', 'Customer_email', 'shipping_address', 'billing_address', 'totalPrice', 'totalItems','Date');
 
-	db.todo.create(body).then(function (todo) {
-		req.user.addTodo(todo).then(function () {
-			return todo.reload();
-		}).then(function (todo) {
-			res.json(todo.toJSON());
+	db.order.create(body).then(function (order) {
+		req.user.addOrder(order).then(function () {
+			return order.reload();
+		}).then(function (order) {
+			res.json(order.toJSON());
 		});
 	}, function (e) {
 		res.status(400).json(e);
@@ -171,8 +159,6 @@ app.post('/users/login', function (req, res) {
 		return db.token.create({
 			token: token
 		});
-
-	
 		
 	}).then(function (tokenInstance) {
 		res.header('Auth', tokenInstance.get('token')).json(userInstance.toPublicJSON());
