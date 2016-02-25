@@ -69,6 +69,11 @@
 	            templateUrl: 'js/view/cart.html',
 	            controller: 'cartController'
 	        })
+	        .state('checkout', {
+	            url: '/checkout',
+	            templateUrl: 'js/view/checkout.html',
+	            controller: 'checkoutController'
+	        })
 	        .state('account_login', {
 	            url: '/account_login',
 	            templateUrl: 'js/view/account_login.html',

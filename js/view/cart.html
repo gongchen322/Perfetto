@@ -5,7 +5,8 @@
                 <a ui-sref="shop.men" class="brand_name">Perfetto</a>
                 <a class='fa-home'> </span>
                 <ul class="top-menu">
-                    <li><a href="#">My Account</a></li>
+                    <li ><a ng-hide="isLoggedIn">Hello,{{name}}</a></li>
+                    <li><a ui-sref="{{location}}">My Account</a></li>
                     <li><a ui-sref="cart">My Treasures</a></li>
                 </ul>
             </div>
@@ -71,7 +72,7 @@
       <td />
     </tr>
   </table>
-  <button class="checkoutBtn" type="button" ng-disabled="item.quantity <=0">Check Out</button>
+  <button ng-click="goCheckout()"class="checkoutBtn" type="button" ng-disabled="cart.getTotalCount() <= 0">Check Out</button>
   </div>
 
 </div>

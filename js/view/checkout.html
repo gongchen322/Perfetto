@@ -1,0 +1,22 @@
+<div class="profileContainer">
+	<div class ='bigheader2' >
+        <div class ='contactHeader'>
+            <div class='contactHeaderContainer'>
+                <a ui-sref="shop.men" class="brand_name">Perfetto</a>
+                <a class='fa-home'> </span>
+               <ul class="top-menu">
+		            	<li ><a ng-hide="isLoggedIn">Hello,{{name}}</a></li>
+		                <li><a  ui-sref="{{location}}">My Account</a> </li>
+		                <li><a ui-sref="cart">My Treasures</a></li>
+		        </ul>
+            </div>
+        </div>
+     </div>
+	<div class="linebreak"></div>
+	<div class="checkoutBody">
+		<h1>Your order is complete!</h1>
+		<p>Your account has been charged for {{cart.getTotalPrice() | currency}}</p>
+		<p>Your shipping address is {{shippingAddress}}</p>
+	</div>
+
+</div>
