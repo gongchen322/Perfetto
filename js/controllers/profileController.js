@@ -1,7 +1,9 @@
 (function() {
 
-    var profileController = function ($scope,dataService, Authorization) {
-    	$isLoggedIn = !Authorization.authorized;
+    var profileController = function ($scope,dataService, Authorization) {	
+      $scope.location = (Authorization.authorized)? 'profile.userInfo':'account_login';
+      $scope.name = (Authorization.authorized)?Authorization.userInfo.name:'';
+      $scope.isLoggedIn = !Authorization.authorized;
     };
 
     profileController.$inject = ['$scope','dataService','Authorization'];

@@ -7,7 +7,10 @@
     	$scope.name = (Authorization.authorized)?Authorization.userInfo.name:'';
     	$scope.isLoggedIn = !Authorization.authorized;
     	console.log("is loggedIn is "+ $scope.isLoggedIn);
-    	$scope.logout = Authorization.clear;
+    	$scope.logout = function() {
+    		Authorization.clear();
+    		$scope.isLoggedIn = !Authorization.authorized;
+    	}
     };
 
     shopController.$inject = ['$scope','$location','dataService','Authorization'];

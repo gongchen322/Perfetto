@@ -168,7 +168,7 @@
 	    this.userInfo = {};
 	    localStorage.removeItem('yourTokenKey');
 	    localStorage.removeItem('userInfo');
-	    $state.go('cart');
+	    $state.go('shop.men');
 	  },
 
 	  go = function(fallback) {

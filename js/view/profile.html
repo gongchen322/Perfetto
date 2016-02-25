@@ -4,12 +4,11 @@
             <div class='contactHeaderContainer'>
                 <a ui-sref="shop.men" class="brand_name">Perfetto</a>
                 <a class='fa-home'> </span>
-                <ul class="top-menu">
-                	<li ng-hide="isLoggedIn"><a >Hello,{{name}}</a></li>
-		            <li ng-hide="isLoggedIn"><a ng-click="logout()">Logout?</a></li>
-                    <li><a ui-sref="profile.userInfo">My Account</a></li>
-                    <li><a ui-sref="cart">My Treasures</a></li>
-                </ul>
+               <ul class="top-menu">
+		            	<li ><a ng-hide="isLoggedIn">Hello,{{name}}</a></li>
+		                <li><a  ui-sref="{{location}}">My Account</a> </li>
+		                <li><a ui-sref="cart">My Treasures</a></li>
+		        </ul>
             </div>
         </div>
      </div>

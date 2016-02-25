@@ -35,7 +35,9 @@
             localStorage.setItem('yourTokenKey', headers('Auth'));
             data=JSON.stringify(data);
             localStorage.setItem('userInfo',data);
-            Authorization.userInfo = data;
+            Authorization.userInfo = JSON.parse(data);
+            console.log("aaa "+Authorization.authorized);
+            console.log("user info is now "+ Authorization.userInfo);
         })   
       };
     };

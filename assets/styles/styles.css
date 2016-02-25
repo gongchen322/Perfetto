@@ -68,9 +68,9 @@ body {
 .top-menu{
  	position:relative;
  	list-style-type: none;
-	right:5%;
-    
-    font-size:25px;
+	padding:0px;
+    width:30%;
+    font-size:30px;
     color:gold;
     float:right;
     margin-bottom:20px;
@@ -98,7 +98,7 @@ body {
 /*Left Side Menu*/
 .bmenu {
     background-color: #171717;
-	width:10%;
+	width:200px;
 	height:100%;
 	float:left;
 	
@@ -137,9 +137,9 @@ ul {
 }
 
 .nested-view-container {
-	width: 90%;
+	width: 100%;
 	height:100%;
-	margin-left:10%;
+	margin-left:200px;
 	background-color: #3a3a3a;	
 }
 .image {
@@ -221,7 +221,6 @@ ul {
   opacity: .5;
 }
 .modal-header {
-  border-bottom: 1px solid gold;
   height:3%;
 }
 
@@ -248,14 +247,12 @@ ul {
 	left:5%;
 	width:45%;
 	float:left;
-	border:solid 1px red;
 }
 
 .modal-body {
   position: relative;
   padding: 15px;
   margin-left:50%;
-  border: 1px solid gold;
   text-align: center;
 }
 
@@ -321,7 +318,6 @@ ul {
 	margin-left:auto;
 	margin-right:auto;
 	height:100%;
-	border:solid 1px red;
 }
 .cartTable {
 	width:70%;
@@ -344,7 +340,7 @@ ul {
 
 .bigheader2 {
   background: none repeat  0 0 #171717;
-  height: 10%; 
+  height: 10%;
 }
 .loginContainer h1,h2,button{
 	text-align: center;
@@ -370,6 +366,9 @@ ul {
 	height:30px;
 }
 
+.loginbody {
+	
+}
 
 /*Profile Page*/
 
