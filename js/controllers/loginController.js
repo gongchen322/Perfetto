@@ -20,7 +20,7 @@
          $http.post("/users", JSON.stringify(body)).success(function(data, status) {
             console.log("Successful signup");         
         }).error(function(data, status) {
-            console.error('Repos error', status, data);
+             alert("Bad Sign Up username or password!")
           })
       };
 
@@ -40,7 +40,9 @@
             Authorization.userInfo = JSON.parse(data);
             console.log("aaa "+Authorization.authorized);
             console.log("user info is now "+ Authorization.userInfo);
-        })   
+        }).error(function(data, status) {
+           alert("Wrong username or password!")
+          })   
       };
     };
 

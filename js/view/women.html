@@ -1,3 +1,46 @@
-<div class="nested-view-container">
-	<span>aaaaaaaaaaaaaaaaaa</span>
+<div >
+	<div  class="men_clothing" ng-repeat="item in items">
+    	<div data-content={{item.name}} class="image" ng-click="open(item.id)">
+    		<img class="men_image" ng-src="{{item.main_image}}" >
+    	</div>
+    	<div class="men_info">
+    		<p>{{item.color}}</p>
+    		<p>{{item.price}}</p>
+    	</div>
+    	
+ 	</div>
+	<script type="text/ng-template" id="myModalContent.html">
+        <div class="popup_item" tabindex="-1">
+	        <div class="modal-header">
+	            <h3 class="modal-title"></h3>
+	        </div>
+	        <img class="large_image" ng-src="{{item.images[0]}}" />
+	        <div class="modal-body">
+	            <strong>{{item.name}}</strong>
+	            <br />
+	            Size: 
+		        <div class="dropdown">
+				  <button class="dropbtn">{{size}}</button>
+				  <div class="size">
+					  <div class="dropdown-content">
+					    <a class="size_item" ng-click="setSize('Small')">Small</a>
+					    <a class="size_item" ng-click="setSize('Median')">Median</a>
+					    <a class="size_item" ng-click="setSize('Large')">Large</a>
+					  </div>
+					  
+				  </div>
+				</div>
+				<br />
+				<br />
+				Quantity: 
+		        <input id="quantity" type="number" name="quantity" min="1" max="10"/>
+	            <p>Color: {{item.color}}</p>
+	     		
+	            <button class="btn btn-primary" type="button" ng-click="addToOrder()">Add To Order</button>
+	            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+	        </div>
+	        </div>  
+    </script>
+ 	
+
 </div>

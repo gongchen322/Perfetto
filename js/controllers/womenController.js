@@ -5,8 +5,8 @@
 
 
 
-    var menController = function ($scope,$uibModal,$log, dataService) {
-        $scope.items=dataService.store.menproducts;
+    var womenController = function ($scope,$uibModal,$log, dataService) {
+        $scope.items=dataService.store.womenproducts;
         $scope.id=1;
         
         $scope.animationsEnabled = true;
@@ -20,7 +20,7 @@
   	      id: id,
   	      resolve: {
   	        item: function () {
-  	          return dataService.store.getMenProduct(id);
+  	          return dataService.store.getWomenProduct(id);
   	        }
 	        }
 	      });
@@ -63,11 +63,11 @@
       });
       };  
 
-  	menController.$inject = ['$scope', '$uibModal','$log','dataService'];
+  	womenController.$inject = ['$scope', '$uibModal','$log','dataService'];
     ModalInstanceCtrl.$inject = ['$scope', '$uibModalInstance', 'item','dataService'];
 
     angular.module('myApp')
-      .controller('menController', menController);
+      .controller('womenController', womenController);
     angular.module('myApp')
       .controller('ModalInstanceCtrl', ModalInstanceCtrl);
     

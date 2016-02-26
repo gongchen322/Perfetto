@@ -55,13 +55,13 @@ myApp
         })        
         // SHOP PAGE AND NESTED VIEWS  =================================
         .state('shop', {
-          	url: '/shop/men',
+          	url: '/shop',
             templateUrl: 'js/view/shop.html',
             controller: 'shopController'
         })
 
         .state('shop.men', {
-        url: '/',
+        url: '/men',
         templateUrl: 'js/view/men.html',
         controller: 'menController'
     	})
@@ -69,9 +69,8 @@ myApp
          .state('shop.women', {
         url: '/women',
         templateUrl: 'js/view/women.html',
-        controller: function($scope) {
-            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-        }})
+        controller: 'womenController'
+        })
 
          .state('shop.sale', {
         url: '/sale',
