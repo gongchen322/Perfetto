@@ -1,7 +1,7 @@
 {
   "name": "Perfetto",
   "version": "0.0.1",
-  "description": "An E-Commerce Web Application developed with AngularJS, NodeJS and MongoDB",
+  "description": "An E-Commerce Web Application developed with AngularJS, NodeJS and Sqlite",
   "main": "index.js",
   "scripts": {
     "start": "webpack --progress --colors --watch |node server.js",
