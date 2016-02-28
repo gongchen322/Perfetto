@@ -19,5 +19,7 @@ User Interaction:
 Technologies:
 
 Front-end:  AnugularJS (Angular UI Router, Angular UI Bootstrap), JQuery, HTML5 and CSS3
+<br>
 Back-end: NodeJS (Library: Underscore, Bcrypt, Express, Sequelize, Body-parser and JsonWebtoken), Sqlite3 database
+<br>
 CSS: Blured Menu effect
