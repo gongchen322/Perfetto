@@ -1,9 +1,6 @@
-//var jquery = require('jquery');
-//var angular = require('./js/lib/angular');
 
 var myApp = angular.module('myApp', ['ui.router','ngAnimate', 'ui.bootstrap']);
 
-//var menController = require('./js/controllers/menController.js');
 myApp
 .constant('_', window._)
 .config(function($stateProvider, $urlRouterProvider) {
@@ -23,16 +20,19 @@ myApp
             templateUrl: 'js/view/cart.html',
             controller: 'cartController'
         })
+        // CHECKOUT PAGE
         .state('checkout', {
             url: '/checkout',
             templateUrl: 'js/view/checkout.html',
             controller: 'checkoutController'
         })
+        // LOGIN PAGE
         .state('account_login', {
             url: '/account_login',
             templateUrl: 'js/view/account_login.html',
             controller: 'loginController'
         })
+        // PROFILE PAGE
         .state('profile', {
             url: '/profile',
             templateUrl: 'js/view/profile.html',
@@ -43,11 +43,13 @@ myApp
                 
             }
         })
+        // USERINFO PAGE
         .state('profile.userInfo', {
         url: '/',
         templateUrl: 'js/view/userInfo.html',
         controller: 'userInfoController'
         })
+        // ORDER PAGE
         .state('profile.orders', {
         url: '/profile/orders',
         templateUrl: 'js/view/orderInfo.html',
@@ -59,39 +61,33 @@ myApp
             templateUrl: 'js/view/shop.html',
             controller: 'shopController'
         })
-
+        // SHOPMEN PAGE
         .state('shop.men', {
         url: '/men',
         templateUrl: 'js/view/men.html',
         controller: 'menController'
     	})
-
+        // SHOPWOMEN PAGE
          .state('shop.women', {
         url: '/women',
         templateUrl: 'js/view/women.html',
         controller: 'womenController'
-        })
-
+        });
+        /*
          .state('shop.sale', {
         url: '/sale',
-        templateUrl: 'js/view/sale.html',
-        controller: function($scope) {
-            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-        }})
+        templateUrl: 'js/view/sale.html'
+        })
 
          .state('shop.collections', {
         url: '/collections',
-        templateUrl: 'js/view/collections.html',
-        controller: function($scope) {
-            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-        }})
+        templateUrl: 'js/view/collections.html'
+        })
 
          .state('shop.stores', {
         url: '/stores',
-        templateUrl: 'js/view/stores.html',
-        controller: function($scope) {
-            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-    	}});
+        templateUrl: 'js/view/stores.html'
+        });*/
 
         
 })

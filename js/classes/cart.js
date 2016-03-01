@@ -7,7 +7,7 @@ function cart(cartName) {
     this.items = [];
 
     // load items from local storage when initializing
-    //this.loadItems();
+    this.loadItems();
 
     // save items to local storage when unloading
     var self = this;
@@ -15,12 +15,11 @@ function cart(cartName) {
         if (self.clearCart) {
             self.clearItems();
         }
-        //self.saveItems();
+        self.saveItems();
         self.clearCart = false;
     });
 }
 
-/* load items from local storage
 cart.prototype.loadItems = function () {
     var items = localStorage != null ? localStorage[this.cartName + "_items"] : null;
     if (items != null && JSON != null) {
@@ -28,8 +27,8 @@ cart.prototype.loadItems = function () {
             var items = JSON.parse(items);
             for (var i = 0; i < items.length; i++) {
                 var item = items[i];
-                if (item.sku != null && item.name != null && item.price != null && item.quantity != null) {
-                    item = new cartItem(item.sku, item.name, item.price, item.quantity);
+                if (item.id != null && item.name != null && item.color != null && item.size != null&& item.price != null && item.quantity != null && item.main_image != null && item.images != null) {
+                    item = new cartItem(item.id, item.name,item.color,item.size, item.price, item.quantity,item.main_image,item.images);
                     this.items.push(item);
                 }
             }
@@ -41,15 +40,15 @@ cart.prototype.loadItems = function () {
 }
 
 
-*/
-/* save items to local storage
+
+
 cart.prototype.saveItems = function () {
     if (localStorage != null && JSON != null) {
         localStorage[this.cartName + "_items"] = JSON.stringify(this.items);
     }
 }
 
-*/
+
 
 
 // adds an item to the cart
