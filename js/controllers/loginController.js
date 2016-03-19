@@ -1,6 +1,5 @@
-(function() {
-    
-    var loginController = function ($scope,$location, $http, dataService, Authorization) {
+angular.module('myApp').controller('loginController', ['$scope','$state','$http','dataService','Authorization', 
+  function ($scope,$location, $http, dataService, Authorization) {
       $scope.location = (Authorization.authorized)? 'profile.userInfo':'account_login';
       $scope.name = "";
       $scope.shippingAddress = "";
@@ -44,12 +43,5 @@
            alert("Wrong username or password!")
           })   
       };
-    };
-
-    loginController.$inject = ['$scope','$location','$http','dataService','Authorization'];
-
-    angular.module('myApp')
-      .controller('loginController', loginController);
-    
-    
-}());
+    }
+]);

@@ -1,6 +1,5 @@
-(function() {
-
-    var cartController = function ($scope,$http, $state,dataService, Authorization) {
+angular.module('myApp').controller('cartController', ['$scope','$http','$state','dataService','Authorization', 
+    function ($scope,$http, $state,dataService, Authorization) {
        $scope.store = dataService.store;
        $scope.cart = dataService.cart;
        $scope.name = (Authorization.authorized)?Authorization.userInfo.name:'Guest';
@@ -19,9 +18,9 @@
             totalItems: $scope.cart.getTotalCount(),
             Date: year + "/" + month + "/" + day,
         };
-    		if(!Authorization.authorized){
-    			alert("please login first.");
-    		}else {
+        if(!Authorization.authorized){
+          alert("please login first.");
+        }else {
           var req = {
               method: 'POST',
               url: '/orders',
@@ -33,15 +32,8 @@
           $http(req).success(function(data, status) {
             console.log("Successfully save orders");
             $state.go('checkout');         
-          });	
-    		}
-    	}
-    };
-
-    cartController.$inject = ['$scope','$http','$state','dataService','Authorization'];
-
-    angular.module('myApp')
-      .controller('cartController', cartController);
-    
-    
-}());
+          }); 
+        }
+      }
+    }
+]);

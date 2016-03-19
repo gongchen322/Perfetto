@@ -1,12 +1,10 @@
-(function () {
-	var dataService = function () {
+angular.module('myApp').service('dataService', [
+	function () {
 		var myStore = new store();
-    var myCart = new cart("AngularStore");
+    	var myCart = new cart("AngularStore");
         return {
             store: myStore,
             cart: myCart
           };
-    	};
-
-	angular.module('myApp').service('dataService', dataService);
-}());
+    }
+]);
