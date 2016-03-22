@@ -1,4 +1,4 @@
-angular.module('myApp').service('Authorization', [
+angular.module('myApp').service('Authorization', ['$state',
 function($state) {
   console.log("this is your token"+localStorage.getItem('yourTokenKey'));
   this.authorized = (localStorage.getItem('yourTokenKey')==null)?false:true;
