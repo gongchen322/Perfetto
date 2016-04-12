@@ -5,7 +5,7 @@
 	        <div class ='bigheader' >
 		        <div class ='contactHeader'>
 		          <div class='contactHeaderContainer'>
-		          	<a ui-sref="shop.women" class="brand_name">Perfetto</a>
+		          	<a ui-sref="shop.collection" class="brand_name">Perfetto</a>
 		            
 		            <ul class="top-menu">
 		            	<li ><a ng-hide="isLoggedIn">Hello,{{name}}</a></li>
@@ -21,10 +21,10 @@
 			<div class="linebreak"></div>
 	            <div class="bmenu">
 	            <ul >
-	                <li><a ui-sref=".men">Men</a></li>
+	                <li><a ui-sref=".men" ng-click="$event.stopPropagation()">Men</a></li>
 	                <li><a ui-sref=".women">Women</a></li>
 	                <li><a ui-sref=".collection">Collection</a></li>
-	                <li><a ui-sref=".stores">Stores</a></li>      
+	                <li><a ui-sref=".storemap">Stores</a></li>      
 	            </ul>
 				</div>
 	    <!-- UI Router Nested View which displays the content from the left navigation bar -->	

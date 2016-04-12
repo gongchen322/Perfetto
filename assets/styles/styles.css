@@ -117,6 +117,7 @@ body {
 	padding-top:20px;
 	color: transparent;
 	display: block;
+	text-decoration: none;
 	text-transform: uppercase;
 	text-shadow: 0px 0px 5px #fff;
 	letter-spacing: 1px;
@@ -452,5 +453,9 @@ ul {
 	margin-left:4%;
 }
 
-
+/*Store Map Page */
+#map {
+        width: 80%;
+        height:40%;
+      }
 

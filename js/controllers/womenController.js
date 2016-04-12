@@ -2,9 +2,7 @@
     $(".popup_item").on('blur',function(){
     	$(this).fadeOut(300);
 	});
-
-
-
+    
     var womenController = function ($scope,$uibModal,$log, dataService) {
         $scope.items=dataService.store.womenproducts;
         $scope.id=1;

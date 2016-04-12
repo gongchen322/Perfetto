@@ -77,6 +77,11 @@ myApp
         url: '/collection',
         templateUrl: 'js/view/collection.html',
         controller: 'collectionController'
+        })
+        .state('shop.storemap', {
+        url: '/storemap',
+        templateUrl: 'js/view/storeMap.html',
+        controller: 'storeMapController'
         });
         /*
          .state('shop.sale', {

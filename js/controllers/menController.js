@@ -2,9 +2,7 @@
     $(".popup_item").on('blur',function(){
     	$(this).fadeOut(300);
 	});
-
-
-
+    
     var menController = function ($scope,$uibModal,$log, dataService) {
         $scope.items=dataService.store.menproducts;
         $scope.id=1;
@@ -24,18 +22,16 @@
   	        }
 	        }
 	      });
-	    modalInstance.result.then(function (selectedItem) {
-	      $scope.selected = selectedItem;
-	    }, function () {
-	      $log.info('Modal dismissed at: ' + new Date());
-	    });
+	       modalInstance.result.then(function (selectedItem) {
+	         $scope.selected = selectedItem;
+	       }, function () {
+	         $log.info('Modal dismissed at: ' + new Date());
+	       });
         };
         
-
   		$scope.setSize = function (size) {
     			$scope.size=size;
   		};
-
     };
 
     var ModalInstanceCtrl = function ($scope, $uibModalInstance, item, dataService) {
