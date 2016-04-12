@@ -15,6 +15,15 @@ function store() {
         new product(5,'Fringed Poncho','Apolo Fringe Black', 380, 'assets/pictures/clothing/women/5s.jpg', ['assets/pictures/clothing/women/5.jpg','assets/pictures/clothing/women/5ss.jpg'])
         
     ];
+
+    this.collections = [
+        [{src:'assets/pictures/collections/1/1.jpg', id:1},{src:'assets/pictures/collections/1/2.jpg', id:2},{src:'assets/pictures/collections/1/3.jpg', id:3}],
+        [{src:'assets/pictures/collections/2/1.jpg', id:1},{src:'assets/pictures/collections/2/2.jpg', id:2},{src:'assets/pictures/collections/2/3.jpg', id:3}],
+        [{src:'assets/pictures/collections/3/1.jpg', id:1},{src:'assets/pictures/collections/3/2.jpg', id:2},{src:'assets/pictures/collections/3/3.jpg', id:3}],
+        [{src:'assets/pictures/collections/4/1.jpg', id:1},{src:'assets/pictures/collections/4/2.jpg', id:2},{src:'assets/pictures/collections/4/3.jpg', id:3}],
+        [{src:'assets/pictures/collections/5/1.jpg', id:1},{src:'assets/pictures/collections/5/2.jpg', id:2},{src:'assets/pictures/collections/5/3.jpg', id:3}],
+        [{src:'assets/pictures/collections/6/1.jpg', id:1},{src:'assets/pictures/collections/6/2.jpg', id:2},{src:'assets/pictures/collections/6/3.jpg', id:3}],
+    ];
    
 }
 store.prototype.getMenProduct = function (id) {

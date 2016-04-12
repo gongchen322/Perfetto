@@ -118,6 +118,11 @@
 	        url: '/women',
 	        templateUrl: 'js/view/women.html',
 	        controller: 'womenController'
+	        })
+	        .state('shop.collection', {
+	        url: '/collection',
+	        templateUrl: 'js/view/collection.html',
+	        controller: 'collectionController'
 	        });
 	        /*
 	         .state('shop.sale', {
@@ -125,10 +130,7 @@
 	        templateUrl: 'js/view/sale.html'
 	        })
 
-	         .state('shop.collections', {
-	        url: '/collections',
-	        templateUrl: 'js/view/collections.html'
-	        })
+	        
 
 	         .state('shop.stores', {
 	        url: '/stores',

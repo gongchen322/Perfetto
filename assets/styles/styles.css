@@ -420,4 +420,37 @@ ul {
 
 
 
+/*Collection Page */
+.collection1 {
+	display: block;
+	height:40%;
+	
+}
+.collection2 {
+	display: block;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float:right;
+}
+
+.collection-panel {
+	position: relative;
+	width:50%;
+}
+
+.collection-panel {
+	margin-left:2%;
+}
+
+.collection-panel > div{
+	position: absolute;
+	margin-left:4%;
+}
+
+
 
