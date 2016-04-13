@@ -1,31 +1,31 @@
 <div >
-	<div  class="men_clothing" ng-repeat="item in items">
+	<div  class="men-clothing" ng-repeat="item in items">
     	<div data-content={{item.name}} class="image" ng-click="open(item.id)">
-    		<img class="men_image" ng-src="{{item.main_image}}" >
+    		<img class="men-image" ng-src="{{item.main_image}}" >
     	</div>
-    	<div class="men_info">
+    	<div class="men-info">
     		<p>{{item.color}}</p>
     		<p>{{item.price}}</p>
     	</div>
     	
  	</div>
 	<script type="text/ng-template" id="myModalContent.html">
-        <div class="popup_item" tabindex="-1">
+        <div class="popup-item" tabindex="-1">
 	        <div class="modal-header">
 	            <h3 class="modal-title"></h3>
 	        </div>
-	        <img class="large_image" ng-src="{{item.images[0]}}" />
+	        <img class="large-image" ng-src="{{item.images[0]}}" />
 	        <div class="modal-body">
 	            <strong>{{item.name}}</strong>
 	            <br />
 	            Size: 
 		        <div class="dropdown">
-				  <button class="dropbtn">{{size}}</button>
+				  <button class="drop-btn">{{size}}</button>
 				  <div class="size">
 					  <div class="dropdown-content">
-					    <a class="size_item" ng-click="setSize('Small')">Small</a>
-					    <a class="size_item" ng-click="setSize('Median')">Median</a>
-					    <a class="size_item" ng-click="setSize('Large')">Large</a>
+					    <a class="size-item" ng-click="setSize('Small')">Small</a>
+					    <a class="size-item" ng-click="setSize('Median')">Median</a>
+					    <a class="size-item" ng-click="setSize('Large')">Large</a>
 					  </div>
 					  
 				  </div>

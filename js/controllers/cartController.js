@@ -31,7 +31,7 @@ angular.module('myApp').controller('cartController', ['$scope','$http','$state',
           };          
           $http(req).success(function(data, status) {
             console.log("Successfully save orders");
-            $state.go('checkout');         
+            $state.go('checkout');      
           }); 
         }
       }

@@ -49,9 +49,14 @@
 
 	myApp
 	.constant('_', window._)
-	.config(function($stateProvider, $urlRouterProvider) {
+	.config(function($stateProvider, $urlRouterProvider, $provide) {
 	    $urlRouterProvider.otherwise('/home');
 	    
+	    //To make navigation to the top of the page, but not to the ui-view
+	    $provide.decorator('$uiViewScroll', function ($delegate) {
+	    return function (uiViewElement) { }; 
+	    });
+
 	    $stateProvider
 	        
 	        // HOME STATES 

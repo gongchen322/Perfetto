@@ -42,9 +42,14 @@
   		$scope.size='Choose your size';
   		
       $scope.addToOrder= function () {
-        dataService.cart.addItem(item.id, item.name, item.color,$scope.size, item.price, $('#quantity').val(), item.main_image, item.images);
-        $uibModalInstance.dismiss('cancel');
-        console.log("item added"+item.name + "quantity is "+$('#quantity').val());
+        if($scope.size ==='Choose your size' || $('#quantity').val()=== 0){
+          alert('Please Choose a size and a quantity');
+        }
+        else{
+          dataService.cart.addItem(item.id, item.name, item.color,$scope.size, item.price, $('#quantity').val(), item.main_image, item.images);
+          $uibModalInstance.dismiss('cancel');
+          console.log("item added"+item.name + "quantity is "+$('#quantity').val());
+        } 
       };
 
   	  $scope.cancel = function () {

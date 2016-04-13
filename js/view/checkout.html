@@ -1,8 +1,8 @@
-<div class="profileContainer">
-	<div class ='bigheader2' >
-        <div class ='contactHeader'>
-            <div class='contactHeaderContainer'>
-                <a ui-sref="shop.collection" class="brand_name">Perfetto</a>
+<div class="profile-container">
+	<div class ='big-header-2' >
+        <div class ='contact-header'>
+            <div class='contact-header-container'>
+                <a ui-sref="shop.collection" class="brand-name">Perfetto</a>
                 <a class='fa-home'> </span>
                <ul class="top-menu">
 		            	<li ><a ng-hide="isLoggedIn">Hello,{{name}}</a></li>
@@ -12,10 +12,10 @@
             </div>
         </div>
      </div>
-	<div class="linebreak"></div>
-	<div class="checkoutBody">
+	<div class="line-break"></div>
+	<div class="checkout-body">
 		<h1>Your order is complete!</h1>
-		<p>Your account has been charged for {{cart.getTotalPrice() | currency}}</p>
+		<p>Your account has been charged for {{savedCost | currency}}</p>
 		<p>Your shipping address is {{shippingAddress}}</p>
 	</div>
 

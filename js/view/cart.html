@@ -1,8 +1,8 @@
-<div class ="cartContainer">
-  <div class ='bigheader2' >
-        <div class ='contactHeader'>
-            <div class='contactHeaderContainer'>
-                <a ui-sref="shop.collection" class="brand_name">Perfetto</a>
+<div class ="cart-container">
+  <div class ='big-header-2' >
+        <div class ='contact-header'>
+            <div class='contact-header-container'>
+                <a ui-sref="shop.collection" class="brand-name">Perfetto</a>
                 <a class='fa-home'> </span>
                 <ul class="top-menu">
                     <li ><a ng-hide="isLoggedIn">Hello,{{name}}</a></li>
@@ -13,28 +13,28 @@
         </div>
      </div>
 
-<div class="cartBoard">
+<div class="cart-board">
   <div class="cart">
-  <table class="cartTable">
+  <table class="cart-table">
 
     <!-- header -->
-    <tr class="cartHeader">
+    <tr class="cart-header">
       <td ><b>Item</b></td>
 
-      <td class="tdCenter"><b>Quantity</b></td>
-      <td class="tdRight"><b>Price</b></td>
+      <td class="td-center"><b>Quantity</b></td>
+      <td class="td-right"><b>Price</b></td>
       <td />
     </tr>
   
     <!-- empty cart message -->
     <tr ng-hide="cart.getTotalCount() > 0" >
-      <td class="tdCenter" colspan="4">Your cart is empty. </td>
+      <td class="td-center" colspan="4">Your cart is empty. </td>
     </tr>
   
     <!-- cart items -->
     <tr ng-repeat="item in cart.items | orderBy:'name'">
-      <td class="cartUnit" >{{item.name}}<br/><img  ng-src="{{item.images[1]}}" /></td>
-      <td class="tdCenter">
+      <td class="cart-unit" >{{item.name}}<br/><img  ng-src="{{item.images[1]}}" /></td>
+      <td class="td-center">
         <div class="input-append">
           <!-- use type=tel instead of number to prevent spinners -->
           <input
@@ -52,8 +52,8 @@
           </button>
         </div>
       </td>
-      <td class="tdRight">{{item.price * item.quantity | currency}}</td>
-      <td class="tdCenter" title="remove from cart">
+      <td class="td-right">{{item.price * item.quantity | currency}}</td>
+      <td class="td-center" title="remove from cart">
         <button 
             class="btn btn-inverse" type="button" 
             ng-click="cart.addItem(item.id, item.name, item.color,item.size, item.price, -10000, item.main_image, item.images)">x
@@ -67,12 +67,12 @@
     <tr class="well">
       <hr />
       <td><b>Total</b></td>
-      <td class="tdCenter"><b>{{cart.getTotalCount()}}</b></td>
-      <td class="tdRight"><b>{{cart.getTotalPrice() | currency}}</b></td>
+      <td class="td-center"><b>{{cart.getTotalCount()}}</b></td>
+      <td class="td-right"><b>{{cart.getTotalPrice() | currency}}</b></td>
       <td />
     </tr>
   </table>
-  <button ng-click="goCheckout()"class="checkoutBtn" type="button" ng-disabled="cart.getTotalCount() <= 0">Check Out</button>
+  <button ng-click="goCheckout()"class="checkout-btn" type="button" ng-disabled="cart.getTotalCount() <= 0">Check Out</button>
   </div>
 
 </div>
