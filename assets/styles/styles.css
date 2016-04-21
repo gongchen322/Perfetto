@@ -55,10 +55,12 @@ body {
 
 /*Header*/
 .big-header {
-  background: none repeat  0 0 #171717;
+  background: #171717 none repeat  0 0 ;
   height: 5%; 
-}
- 
+  margin-right:auto;
+  width: auto;
+ }
+
 .contact-header .contact-header-container {
     font-size: 11px;
     color: #d8d8d8;
@@ -179,6 +181,8 @@ ul {
 .image:hover:after, .image:hover:before {
     opacity:1;
 }
+
+
 .men-clothing {
 	text-align:center;
 	float:left;	
